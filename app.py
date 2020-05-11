@@ -5,6 +5,9 @@ from Engine.movietest import MovieEngine
 
 app = Flask(__name__)
 
+book = BookEngine()
+movie = MovieEngine()
+ob = interface(book, movie)
 
 @app.route('/')
 def index():
@@ -19,8 +22,6 @@ def pass_val():
   contents = ob.controller(M_val, B_val)
   return render_template("main.html", len=len(contents), contents=contents)
 
-book = BookEngine()
-movie = MovieEngine()
-ob = interface(book, movie)
+
 if __name__ == '__main__':
   app.run(debug=True)
