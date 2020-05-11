@@ -1,2 +1,2 @@
 # Flask-webapp
-Recommendation system
+Recommendation system for books and movie
