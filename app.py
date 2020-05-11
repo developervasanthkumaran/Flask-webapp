@@ -19,9 +19,8 @@ def pass_val():
   contents = ob.controller(M_val, B_val)
   return render_template("main.html", len=len(contents), contents=contents)
 
-
+book = BookEngine()
+movie = MovieEngine()
+ob = interface(book, movie)
 if __name__ == '__main__':
-  book = BookEngine()
-  movie = MovieEngine()
-  ob = interface(book, movie)
   app.run(debug=True)
