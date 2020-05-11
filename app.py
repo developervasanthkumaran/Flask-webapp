@@ -24,4 +24,4 @@ if __name__ == '__main__':
   book = BookEngine()
   movie = MovieEngine()
   ob = interface(book, movie)
-  app.run(debug=True)
+  app.run(debug=True, use_reloader=True)
