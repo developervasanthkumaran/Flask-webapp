@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}" />  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <title>RecommendationEngine</title>
+</head>
+<body class="bg-primary">
+  <nav class="navbar bg-light justify-content-between sticky-top">
+    <a class="font-weight-bold" style="font-size: x-large;">Recommendation Engine For Books and Movies</a>
+    <form action="{{ url_for('pass_val') }}" class="form-inline" method="post">
+        <input type="text" size="100" class="form-control" name="myInput" aria-label="Large"
+          aria-describedby="inputGroup-sizing-sm">        
+          <button type="submit" name="_ele" class="btn btn-outline-primary"> SEARCH </span>
+    </form>
+  </nav>
+  <div class="container p-4">
+    <div class="container">
+      {% if contents %}
+      {% for i in contents %}
+      <div class="container">       
+          <h1 class="display-1 text-center text-white font-weight-bold">Recommended {{ i[0] }}</h1>
+      </div>
+      <div class="row bd-highlight p-2">
+      {% for title in i[1] %}
+      <div class="col-sm-4 p-4">
+        <div class="card p-2 border-0">
+          <div class="card-body">
+            <h5 class="card-title">{{ title }}</h5>
+            <a href="#" class="btn bg-dark text-white">Get content</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+     {% endfor %}
+  {% endif %}
+    </div>
+   
+  </div>
+</body>
+
+</html>
