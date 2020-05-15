@@ -1,7 +1,7 @@
 import json
-
 common = {}
-with open('D:\\apps\\Flask\\flask-recommendationSystem\\dataset\\new.json', encoding='utf-8', errors='ignore') as json_data:
+
+with open('static/dataset/new.json', encoding='utf-8', errors='ignore') as json_data:
     data = json.load(json_data, strict=False)
 
 for i in data:

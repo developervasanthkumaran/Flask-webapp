@@ -6,7 +6,7 @@ from omdb import OMDBClient
 from Engine.movietestRun import MovieEngine
 from flask.helpers import url_for
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 ob = interface(BookEngine(), MovieEngine())
 
 client = OMDBClient(apikey='e181a4c1')

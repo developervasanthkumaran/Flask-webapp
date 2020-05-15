@@ -7,7 +7,7 @@ class MovieEngine:
 
     def __init__(self):
         pd.set_option('display.max_columns', 100)
-        df = pd.read_csv("D:\\apps\\Flask\\flask-recommendationSystem\\dataset\\Movie.csv",skipinitialspace=True)
+        df = pd.read_csv('static/dataset/Movie.csv',skipinitialspace=True)
         self.df = df
         df = df[['Title', 'Genres', 'Director', 'Writers', 'Cast', 'Short Summary', 'Runtime', 'Rating', 'Movie Poster']]
         df = df.fillna("")
