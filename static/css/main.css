@@ -1,0 +1,13 @@
+
+.blockfont{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: bold;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+

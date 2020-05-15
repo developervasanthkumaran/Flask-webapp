@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
-
 class BookEngine:
 
     def __init__(self):
@@ -26,6 +25,11 @@ class BookEngine:
         return indices, cosine_sim
 
     def recommendations(self, title):
+        if title in self.df.index:
+            pass
+        else:
+            return True
+            
         recommended_books = []
         indices = self.indices
         cosine_sim = self.cosine_sim
@@ -36,7 +40,7 @@ class BookEngine:
         # creating a Series with the similarity scores in descending order
         score_series = pd.Series(cosine_sim[idx]).sort_values(ascending=False)
 
-        _indexes = list(score_series.iloc[1:22].index)
+        _indexes = list(score_series.iloc[:32].index)
         for i in _indexes:
             recommended_books.append(list(df.index)[i])
         return recommended_books

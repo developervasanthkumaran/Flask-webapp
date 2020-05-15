@@ -10,8 +10,14 @@ class interface:
     br = ["Books"]
     mr = ["Movies"]
     bres = bf.recommendations(b_val)
-    br.append(bres)
+    if bres == True:
+      br.append(['No Results Found'])
+    else:
+      br.append(bres)
     mres = mf.recommendations(m_val)
-    mr.append(mres)
+    if mres == True:
+      mr.append(['No Results Found'])
+    else:
+      mr.append(mres)
     return [mr, br]
   
