@@ -10,3 +10,9 @@
 .grow:hover {
   transform: scale(1.1);
 }
+.nounderline {
+  text-decoration: none !important
+}
+.autofontsize{
+  font-size: 1rem;
+}

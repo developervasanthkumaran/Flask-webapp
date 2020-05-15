@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,13 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <title>RecommendationEngine</title>
 </head>
-<body style='background-color: #003A64'>
-  <nav class="navbar bg-light justify-content-between sticky-top">
-      <a href= "{{ url_for('index') }}" class="font-weight-bold" style="font-size: x-large;">Recommendation Engine For Books and Movies</a>
+<body style='background-color: #0c0c0c'>
+  <nav class="navbar justify-content-between sticky-top" style='background-color: #161616'>
+      <a href= "{{ url_for('index') }}" class="font-weight-bold text-danger nounderline" style="font-size: x-large;">Recommendation Engine For Books and Movies</a>
     <form action="{{ url_for('viewcontents') }}" class="form-inline" method="post">
         <input type="text" size="100" class="form-control" name="myInput" aria-label="Large"
           aria-describedby="inputGroup-sizing-sm" placeholder="moviename|bookname" required>        
-          <button type="submit" name="_ele" class="btn btn-outline-primary"> SEARCH </span>
+          <button type="submit" name="_ele" class="btn btn-outline-danger"> SEARCH </span>
     </form>
   </nav>
   <div class="container-fluid p-4">
@@ -24,19 +23,19 @@
       {% if contents %}
       {% for i in contents %}
       <div class="container-fluid">       
-          <h1 class="text-center blockfont text-white font-weight-bold">Recommended {{ i[0] }}</h1>
+          <h1 class="text-center blockfont text-danger font-weight-bold">Recommended {{ i[0] }}</h1>
       </div>
       {% set val = " in " %}
       <div class="row bd-highlight p-2">
       {% for title in i[1] %}
       <div class="col-sm-3 p-4">
-        <div class="card p-2 border-0 grow">          
+        <div class="card border-0 grow overflow-hidden">          
           {% if check(title) %}
-          <img class="card-img-top" src='{{ check(title) }}' alt="Card image cap">
+          <img class="card-img-top overflow-hidden" src='{{ check(title) }}' alt="Card image cap" style="height:400px;width:auto">
           {% endif %}
-          <div class="card-body">
-            <h5 class="card-title" style="font-size:3vh;">{{ title }}</h5>
-            <a href= "http://www.google.com/search?q=%22+{{title+val+i[0]}}+%22" class="btn bg-dark text-white">Get content</a>
+          <div class="card-body overflow-hidden">
+            <div class="card-title overflow-hidden autofontsize font-weight-bold">{{ title }}</div>
+            <a href= "http://www.google.com/search?q=%22+{{title+val+i[0]}}+%22" class="btn bg-dark text-white overflow-hidden">Get content</a>
           </div>
         </div>
       </div>
