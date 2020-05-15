@@ -12,7 +12,10 @@
 </head>
 <body style='background-color: #003A64'>
   <nav class="navbar bg-light justify-content-between sticky-top">
-    <a class="font-weight-bold" style="font-size: x-large;">Recommendation Engine For Books and Movies</a>
+    <div>
+      <a href= "{{ url_for('index') }}" class="font-weight-bold" style="font-size: x-large;">Recommendation Engine For Books and Movies</a>
+      <div class="display-5 text-danger">search as like here : moviename|bookname</div>
+    </div>
     <form action="{{ url_for('viewcontents') }}" class="form-inline" method="post">
         <input type="text" size="100" class="form-control" name="myInput" aria-label="Large"
           aria-describedby="inputGroup-sizing-sm" required>        
